@@ -25,4 +25,14 @@ public class CalcTest {
         assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
     }
 
+    @Test
+    public void testSub_Success(){
+        assertEquals(16,calc.sub(20,4));
+    }
+
+    @Test
+    public void testSub_Fail(){
+        Exception ex = assertThrows(ArithmeticException.class, () -> calc.sub(Integer.MAX_VALUE, 1));
+        assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
+    }
 }
