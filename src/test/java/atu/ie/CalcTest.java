@@ -48,4 +48,17 @@ public class CalcTest {
         Exception ex = assertThrows(ArithmeticException.class, () -> calc.mult(Integer.MAX_VALUE, 1 ));
         assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
     }
+
+    @Test
+    public void testDiv_Success(){
+        assertEquals(10,calc.div(20,2));
+        assertEquals(5,calc.div(25,5));
+        assertEquals(1.5,calc.div(3,2));
+    }
+
+    @Test
+    public void testDiv_Fail(){
+        Exception ex = assertThrows(ArithmeticException.class, () -> calc.div(Integer.MAX_VALUE, 1 ));
+        assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
+    }
 }
